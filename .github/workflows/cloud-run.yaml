@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
   REGION: europe-west9
-  REPO_NAME: gcmspr
+  REPO_NAME: demoapi
 
 jobs:
   build-and-deploy:
