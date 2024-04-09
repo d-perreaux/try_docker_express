@@ -37,16 +37,16 @@ jobs:
 
       - name: Tag the docker image
         run: |
-          docker tag temp-demoapi gcr.io/${{ env.PROJECT_ID }}/$REPO_NAME:${{ github.sha }}
+          docker tag temp-demoapi gcr.io/${{ env.PROJECT_ID }}/$REPO_NAME/demoapi:${{ github.sha }}
 
       - name: Push the image to the Google Container Registry (GCR)
         run: |
-          docker push gcr.io/$PROJECT_ID/gcmspr:${{ github.sha }}
+          docker push gcr.io/$PROJECT_ID/gcmspr/demoapi:${{ github.sha }}
 
       - name: Deploy
         run: |
           gcloud run deploy $REPO_NAME \
           --region $REGION \
-          --image gcr.io/$PROJECT_ID/gcmspr:${{ github.sha }} \
+          --image gcr.io/$PROJECT_ID/gcmspr/demoapi:${{ github.sha }} \
           --platform managed \
           --quiet
