@@ -33,7 +33,7 @@ jobs:
 
       - name: Build and Tag the docker image
         run: |
-          docker build -f Dockerfile.node --tag gcr.io/$PROJECT_ID/gcmspr:demoapi
+          docker build -f Dockerfile.node -t gcr.io/$PROJECT_ID/gcmspr:demoapi:$GITHUB_SHA .
 
       - name: Push the image to the Google Container Registry (GCR)
         run: |
