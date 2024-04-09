@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
   REGION: europe-west9
-  REPO_NAME: demoapi
+  REPO_NAME: gcmspr
 
 jobs:
   build-and-deploy:
@@ -41,12 +41,12 @@ jobs:
 
       - name: Push the image to the Google Container Registry (GCR)
         run: |
-          docker push gcr.io/$PROJECT_ID/demoapi:${{ github.sha }}
+          docker push gcr.io/$PROJECT_ID/gcmspr:${{ github.sha }}
 
       - name: Deploy
         run: |
           gcloud run deploy $REPO_NAME \
           --region $REGION \
-          --image gcr.io/$PROJECT_ID/demoapi \
+          --image gcr.io/$PROJECT_ID/gcmspr \
           --platform managed \
           --quiet
