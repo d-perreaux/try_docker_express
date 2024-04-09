@@ -47,6 +47,6 @@ jobs:
         run: |
           gcloud run deploy $REPO_NAME \
           --region $REGION \
-          --image gcr.io/$PROJECT_ID/gcmspr \
+          --image gcr.io/$PROJECT_ID/gcmspr:${{ github.sha }} \
           --platform managed \
           --quiet
