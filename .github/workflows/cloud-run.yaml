@@ -37,11 +37,11 @@ jobs:
 
       - name: Tag the docker image
         run: |
-          docker tag temp-demoapi gcr.io/$PROJECT_ID/demoapi:$GITHUB_SHA
+          docker tag temp-demoapi gcr.io/${{ env.PROJECT_ID }}/demoapi:${{ github.sha }}
 
       - name: Push the image to the Google Container Registry (GCR)
         run: |
-          docker push gcr.io/$PROJECT_ID/demoapi
+          docker push gcr.io/$PROJECT_ID/demoapi:${{ github.sha }}
 
       - name: Deploy
         run: |
