@@ -11,6 +11,10 @@ const prisma = new PrismaClient()
 const app = express();
 
 app.get("/", async (req, res) => {
+    res.send("coucou");
+})
+
+app.get("/users", async (req, res) => {
     const createUSer = await prisma.$queryRaw`
     INSERT INTO users (Pseudo, password) VALUES ("michel", "biere")`
 
