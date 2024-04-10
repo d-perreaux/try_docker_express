@@ -10,4 +10,4 @@ COPY ./app .
 
 EXPOSE 3000
 
-CMD ["npx", "prisma", "migrate", "deploy"] && ["npm", "start"]
+CMD ["npm", "start"]

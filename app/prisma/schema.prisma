@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model ANNONCES {
+model annonces {
   Id           Int      @id @default(autoincrement())
   Titre        String
 }
@@ -21,4 +21,15 @@ model ANNONCES {
 model users {
   Id           Int      @id @default(autoincrement())
   Pseudo        String
+  password      String
+}
+
+model tata {
+  Id           Int      @id @default(autoincrement())
+  Maman        String?
+}
+
+model toto {
+  Id           Int      @id @default(autoincrement())
+  Tonton        String?
 }
