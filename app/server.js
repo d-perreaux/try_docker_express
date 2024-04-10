@@ -1,5 +1,8 @@
 const express = require("express");
 const PORT = 3000;
+const connectDB = require("./config/database");
+
+connectDB;
 
 const app = express();
 
