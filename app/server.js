@@ -4,18 +4,17 @@ const connectDB = require("./config/database");
 const { PrismaClient } = require('@prisma/client');
 
 
-// connectDB;
+connectDB;
 
-// const prisma = new PrismaClient()
+const prisma = new PrismaClient()
 
 const app = express();
 
 app.get("/", async (req, res) => {
-    // const result = await prisma.$queryRaw`
-    // SELECT Pseudo FROM users
-    // `
-    // res.send(result);
-    res.send("coucou");
+    const result = await prisma.$queryRaw`
+    SELECT Pseudo FROM users
+    `
+    res.send(result);
 })
 
 app.listen(PORT);

@@ -10,4 +10,10 @@ COPY ./app .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Copy the entrypoint script into the container
+COPY ./app/entrypoint.sh .
+RUN chmod +x ./entrypoint.sh
+
+# Run the entrypoint script
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+
