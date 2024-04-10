@@ -5,7 +5,6 @@ RUN apt-get install -y openssl
 WORKDIR /usr/src/app
 
 COPY ./app/package*.json ./
-COPY ./app/.env ./
 COPY ./app/prisma ./prisma/
 
 RUN npm install
