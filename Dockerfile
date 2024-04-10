@@ -3,8 +3,10 @@ FROM node:18
 WORKDIR /usr/src/app
 
 COPY ./app/package*.json ./
+COPY .env ./.env
 
 RUN npm install
+RUN npm i -g prisma
 
 COPY ./app .
 
