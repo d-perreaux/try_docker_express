@@ -1,3 +1,4 @@
 #!/bin/sh
-RUN npx prisma generate --schema ./prisma/schema.prisma
+npx prisma generate
+npx prisma migrate deploy
 npm start
