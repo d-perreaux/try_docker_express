@@ -17,3 +17,8 @@ model ANNONCES {
   Id           Int      @id @default(autoincrement())
   Titre        String
 }
+
+model users {
+  Id           Int      @id @default(autoincrement())
+  Pseudo        String
+}
